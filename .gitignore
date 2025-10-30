@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.dylib
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+.python-version
+
+# IDE/editor
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# App secrets and local config
+.env
+.streamlit/secrets.toml
+
+# Data artifacts (keep small sample CSV tracked)
+datasets/**/*.parquet
+datasets/**/*.feather
+datasets/**/*.pickle
+datasets/**/*.pkl
+datasets/**/*.zip
+
+# Reports (keep templates, ignore generated PDFs)
+reports/*.pdf
+
+# Logs
+*.log
