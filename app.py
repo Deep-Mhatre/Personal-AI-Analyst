@@ -16,6 +16,16 @@ import utils.ai_summary as ai_summary
 import hashlib
 
 load_dotenv()  # load .env if present (no-op if package missing)
+try:
+    # Also load from Streamlit Cloud secrets if present
+    if 'OPENAI_API_KEY' in st.secrets and not os.getenv('OPENAI_API_KEY'):
+        os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
+    if 'OPENROUTER_API_KEY' in st.secrets and not os.getenv('OPENROUTER_API_KEY'):
+        os.environ['OPENROUTER_API_KEY'] = st.secrets['OPENROUTER_API_KEY']
+    if 'GEMINI_API_KEY' in st.secrets and not os.getenv('GEMINI_API_KEY'):
+        os.environ['GEMINI_API_KEY'] = st.secrets['GEMINI_API_KEY']
+except Exception:
+    pass
 st.set_page_config(page_title="Personal AI Analyst", layout="wide")
 
 # App title
